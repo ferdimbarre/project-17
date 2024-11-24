@@ -46,6 +46,7 @@ setTours(tours.map((tour) =>
                             </button>
                         </p>
                         <img src={tour.image} alt="tour-image" />
+                        <p></p>
                         <button onClick={() => notInterested(tour.id)}>
                             Not Interested
                         </button>
