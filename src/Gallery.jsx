@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
 
 function Gallery() {
-    const [tours, setTours] = useState([]);
+    const [tours, setTours] = useState([]); 
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         // Fetch daily sales data from API
-        const site = 'https://api.allorigins.win/get?url=https://course-api.com/react-tours-project';
+        const site = 'https://api.allorigins.win/get?url=https://course-api.com/react-tours-project'; //api 
         fetch(site)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Unable to provide tour info');
+                    throw new Error('Unable to provide tour info');//throws error
                 }
                 return response.json();
             })
             .then(data => setTours(JSON.parse(data.contents)))
             .catch(error => {
-                console.error('Unable to fetch tour information', error);
+                console.error('Unable to fetch tour information', error); //catches error
             }).finally(() =>setIsLoading(false));
     }, []); // Empty array 
 
@@ -35,11 +35,11 @@ setTours(tours.map((tour) =>
 
     return (
         <div>
-            <h2>Tour Information</h2>
+            <h2>TOUR INFORMATION</h2>
             <ul>
                 {tours.map(tour => (
                     <li key={tour.id}>
-                        <p id= "name">{tour.name}: ${tour.price} </p>
+                        <p id= "name">{tour.name}: ${tour.price} </p> 
                         <p>{tour.showMore ? tour.info : `${tour.info.substring(0, 100)}...`}
                             <button onClick={() => readMore(tour.id)}>
                                 {tour.showMore ? 'Show Less' : 'Read More'}
@@ -55,7 +55,7 @@ setTours(tours.map((tour) =>
             </ul>
         </div>
     );
-}
+} 
 
 export default Gallery;
 

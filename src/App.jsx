@@ -16,6 +16,6 @@ function App() {
       <Gallery />
   </div>
   )
-}
+} //displays gallery
 
 export default App
