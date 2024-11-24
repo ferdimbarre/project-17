@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function FetchTourData() {
+function Gallery() {
     const [tours, setTours] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -60,5 +60,5 @@ setTours(tours.map((tour) =>
     );
 }
 
-export default FetchTourData;
+export default Gallery;
 
