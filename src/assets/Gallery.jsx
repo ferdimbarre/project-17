@@ -6,7 +6,8 @@ function Gallery() {
 
     useEffect(() => {
         // Fetch daily sales data from API
-        fetch('https://course-api.com/react-tours-project')
+        const site = 'https://api.allorigins.win/get?url=https://course-api.com/react-tours-project';
+        fetch(site)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Unable to provide tour info');
