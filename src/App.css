@@ -51,6 +51,6 @@ button{
 text{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.name{
+#name{
   color: rgb(90, 26, 26)
 }
