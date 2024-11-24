@@ -14,12 +14,10 @@ function Gallery() {
                 }
                 return response.json();
             })
-            .then(data => setTours(data))
-            .catch(() => {
-                console.error('Unable to fetch tour information');
-               
+            .then(data => setTours(JSON.parse(data.contents)))
+            .catch(error => {
+                console.error('Unable to fetch tour information', error);
             }).finally(() =>setIsLoading(false));
-    
     }, []); // Empty array 
 
     const notInterested = (id) => {setTours(tours.filter((tour) => tour.id !== id));
@@ -42,18 +40,15 @@ setTours(tours.map((tour) =>
                 {tours.map(tour => (
                     <li key={tour.id}>
                         <p>{tour.name}: ${tour.price} -</p>
-                        <p>{tour.info}</p> 
-<p>{tour.showMore ? tour.info : `${tour.info.substring(0, 100)}...`}
+                        <p>{tour.showMore ? tour.info : `${tour.info.substring(0, 100)}...`}
                             <button onClick={() => readMore(tour.id)}>
                                 {tour.showMore ? 'Show Less' : 'Read More'}
                             </button>
-                            </p>
-                       
+                        </p>
                         <img src={tour.image} alt="tour-image" />
                         <button onClick={() => notInterested(tour.id)}>
                             Not Interested
                         </button>
-                        
                     </li>
                 ))}
             </ul>
@@ -62,4 +57,5 @@ setTours(tours.map((tour) =>
 }
 
 export default Gallery;
+
 
