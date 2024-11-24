@@ -42,12 +42,15 @@
 }
 
 h2{
-color: navy;
+color: rgb(103, 15, 15);
 
 }
 button{
-  color: aqua;
+  color: rgb(103, 15, 15);
 }
 text{
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.name{
+  color: rgb(90, 26, 26)
 }

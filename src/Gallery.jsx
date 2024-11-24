@@ -39,7 +39,7 @@ setTours(tours.map((tour) =>
             <ul>
                 {tours.map(tour => (
                     <li key={tour.id}>
-                        <p>{tour.name}: ${tour.price} -</p>
+                        <p id= "name">{tour.name}: ${tour.price} </p>
                         <p>{tour.showMore ? tour.info : `${tour.info.substring(0, 100)}...`}
                             <button onClick={() => readMore(tour.id)}>
                                 {tour.showMore ? 'Show Less' : 'Read More'}
